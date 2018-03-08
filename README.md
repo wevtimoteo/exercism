@@ -11,7 +11,7 @@ Just solving some problems for [Exercism.io](http://exercism.io) and level up my
 - [x] Elixir
 - [x] Crystal
 - [ ] Common Lisp
-- [ ] Javascript
+- [x] Javascript
 - [ ] Objective-C
 - [x] Swift
 - [ ] Rust

@@ -9,7 +9,7 @@ Just solving some problems for [Exercism.io](http://exercism.io) and level up my
 - [x] Python
 - [x] Clojure
 - [x] Elixir
-- [ ] Crystal
+- [x] Crystal
 - [ ] Common Lisp
 - [ ] Javascript
 - [ ] Objective-C

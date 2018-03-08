@@ -6,14 +6,15 @@ Just solving some problems for [Exercism.io](http://exercism.io) and level up my
 ## Languages WIP
 
 - [x] Ruby
-- [ ] Python
-- [ ] Clojure
+- [x] Python
+- [x] Clojure
 - [ ] Elixir
 - [ ] Crystal
 - [ ] Common Lisp
 - [ ] Javascript
 - [ ] Objective-C
-- [ ] Swift
+- [x] Swift
 - [ ] Rust
 - [ ] Scala
 - [ ] OCaml
+- [x] Haskell

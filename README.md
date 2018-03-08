@@ -8,7 +8,7 @@ Just solving some problems for [Exercism.io](http://exercism.io) and level up my
 - [x] Ruby
 - [x] Python
 - [x] Clojure
-- [ ] Elixir
+- [x] Elixir
 - [ ] Crystal
 - [ ] Common Lisp
 - [ ] Javascript

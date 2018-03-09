@@ -12,7 +12,7 @@ responseFor sentence
   | otherwise  = "Whatever."
   where areAllUpper   = all isUpper
         isQuestion    = last (filter (not . isSpace) sentence) == '?'
-        isForcefulQuestion = saysSomething sentence && areAllUpper (filter isAlpha sentence) && isQuestion
+        isForcefulQuestion = isShouting && isQuestion
         isShouting    = saysSomething sentence && areAllUpper (filter isAlpha sentence)
         isShoutingGibberish = areAllUpper sentence
         saysSomething = any isAlpha

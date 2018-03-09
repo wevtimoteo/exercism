@@ -5,13 +5,15 @@ import Data.Char (isUpper, isAlpha, isSpace)
 responseFor :: String -> String
 responseFor sentence
   | isNothing  = "Fine. Be that way!"
-  | isShouting = "Whoa, chill out!"
   | isForcefulQuestion = "Calm down, I know what I'm doing!"
+  | isShouting = "Whoa, chill out!"
+  | isShoutingGibberish = "Whoa, chill out!"
   | isQuestion = "Sure."
   | otherwise  = "Whatever."
   where areAllUpper   = all isUpper
-        isQuestion    = last sentence == '?'
-        isForcefulQuestion = areAllUpper (init sentence) && last sentence == '?'
+        isQuestion    = last (filter (not . isSpace) sentence) == '?'
+        isForcefulQuestion = saysSomething sentence && areAllUpper (filter isAlpha sentence) && isQuestion
         isShouting    = saysSomething sentence && areAllUpper (filter isAlpha sentence)
+        isShoutingGibberish = areAllUpper sentence
         saysSomething = any isAlpha
         isNothing     = all isSpace sentence

@@ -3,3 +3,6 @@ haskell/**/*.cabal
 
 # Clojure
 clojure/**/target
+
+# Python
+python/**/.pytest_cache

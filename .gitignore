@@ -1,2 +1,5 @@
 # Haskell
-*.cabal
+haskell/**/*.cabal
+
+# Clojure
+clojure/**/target

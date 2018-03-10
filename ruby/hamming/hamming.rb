@@ -4,7 +4,7 @@ end
 
 class Hamming
   def self.compute(strands_a, strands_b)
-    raise ArgumentError if strands_a.length != strands_b.size
+    raise ArgumentError if strands_a.size != strands_b.size
 
     strands = strands_a.split(//).zip strands_b.split(//)
 

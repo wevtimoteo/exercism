@@ -3,17 +3,13 @@ module BookKeeping
 end
 
 class Hamming
-  def self.compute(strand_a, strand_b)
-    return 0 if strand_a.size != strand_b.size
+  def self.compute(strands_a, strands_b)
+    raise ArgumentError if strands_a.length != strands_b.size
 
-    mutations = 0
+    strands = strands_a.split(//).zip strands_b.split(//)
 
-    strand_a.split('').each_with_index do |nucleotide, index|
-      if nucleotide != strand_b[index]
-        mutations += 1
-      end
+    strands.count do |base_a, base_b|
+      base_a != base_b
     end
-
-    mutations
   end
 end

@@ -1,16 +1,16 @@
 package bob
 
 import (
-  "strings"
+	"strings"
 )
 
 // Possible answers
 const (
-	nothing = "Fine. Be that way!"
-  forcefulQuestion = "Calm down, I know what I'm doing!"
-	shouting = "Whoa, chill out!"
-	question = "Sure."
-	something = "Whatever."
+	nothing          = "Fine. Be that way!"
+	forcefulQuestion = "Calm down, I know what I'm doing!"
+	shouting         = "Whoa, chill out!"
+	question         = "Sure."
+	something        = "Whatever."
 )
 
 // Receives a sentence then answer according with
@@ -23,9 +23,9 @@ func Hey(remark string) string {
 		return nothing
 	case isShouting(remark) && isQuestion(remark):
 		return forcefulQuestion
-  case isQuestion(remark):
+	case isQuestion(remark):
 		return question
-  case isShouting(remark):
+	case isShouting(remark):
 		return shouting
 	default:
 		return something
@@ -33,9 +33,9 @@ func Hey(remark string) string {
 }
 
 func isQuestion(sentence string) bool {
-  return strings.HasSuffix(sentence, "?")
+	return strings.HasSuffix(sentence, "?")
 }
 
 func isShouting(sentence string) bool {
-  return sentence == strings.ToUpper(sentence) && sentence != strings.ToLower(sentence)
+	return sentence == strings.ToUpper(sentence) && sentence != strings.ToLower(sentence)
 }

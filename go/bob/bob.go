@@ -1,15 +1,41 @@
-// This is a "stub" file.  It's a little start on your solution.
-// It's not a complete solution though; you have to write some code.
-
-// Package bob should have a package comment that summarizes what it's about.
-// https://golang.org/doc/effective_go.html#commentary
 package bob
 
-// Hey should have a comment documenting it.
+import (
+  "strings"
+)
+
+// Possible answers
+const (
+	nothing = "Fine. Be that way!"
+  forcefulQuestion = "Calm down, I know what I'm doing!"
+	shouting = "Whoa, chill out!"
+	question = "Sure."
+	something = "Whatever."
+)
+
+// Receives a sentence then answer according with
+// sentence pattern
 func Hey(remark string) string {
-	// Write some code here to pass the test suite.
-	// Then remove all the stock comments.
-	// They're here to help you get started but they only clutter a finished solution.
-	// If you leave them in, reviewers may protest!
-	return ""
+	remark = strings.TrimSpace(remark)
+
+	switch {
+	case len(remark) == 0:
+		return nothing
+	case isShouting(remark) && isQuestion(remark):
+		return forcefulQuestion
+  case isQuestion(remark):
+		return question
+  case isShouting(remark):
+		return shouting
+	default:
+		return something
+	}
+}
+
+func isQuestion(sentence string) bool {
+  return strings.HasSuffix(sentence, "?")
+}
+
+func isShouting(sentence string) bool {
+  return sentence == strings.ToUpper(sentence) && sentence != strings.ToLower(sentence)
 }

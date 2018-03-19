@@ -32,10 +32,12 @@ func Hey(remark string) string {
 	}
 }
 
+// Check if a string has question mark at end of it
 func isQuestion(sentence string) bool {
 	return strings.HasSuffix(sentence, "?")
 }
 
+// Check if a string is upcase
 func isShouting(sentence string) bool {
 	return sentence == strings.ToUpper(sentence) && sentence != strings.ToLower(sentence)
 }
